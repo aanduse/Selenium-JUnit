@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 public class Day01_BasicNavigations {
 //Create a new class under : BasicNavigations
-//    Create main method
+//Create main method
     public static void main(String[] args) {
         //    Set Path
         System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
