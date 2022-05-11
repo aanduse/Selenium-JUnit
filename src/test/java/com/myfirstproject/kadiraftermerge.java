@@ -1,4 +1,4 @@
 package com.myfirstproject;
 
-public class kadiraftermerge {
+public class kadiraftermerge{
 }
