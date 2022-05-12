@@ -68,6 +68,7 @@ public class Review1 {
         else {
             System.out.println("FAILED-- Current URL: "+currentURL02);
         }
+        driver.quit();
     }
 }
 
