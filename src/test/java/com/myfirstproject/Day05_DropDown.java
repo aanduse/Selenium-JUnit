@@ -32,13 +32,16 @@ public class Day05_DropDown {
         //2. create a select object
         Select select = new Select(dropdown);
         //3. select any option using by index- NOTE index starts at 0
-        Thread.sleep(5000);//NOT MANDATORY
+        Thread.sleep(3000);//NOT MANDATORY
         select.selectByIndex(1);//option 1
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         select.selectByIndex(2);//option 2
-        Thread.sleep(5000);
-        select.selectByIndex(1);//option 1
+        Thread.sleep(3000);
+        select.selectByIndex(0);//option 1
+        Thread.sleep(3000);
     }
+
+
     @Test
     public void selectByValueTest() throws InterruptedException {
         //2.Create method selectByValueTest Select Option 2 by value
@@ -50,6 +53,7 @@ public class Day05_DropDown {
         select.selectByValue("2");
         Thread.sleep(5000);
     }
+
     //    //3.Create method selectByVisibleTextTest
     //    Select Option 1 value by visible text
     @Test
@@ -59,12 +63,13 @@ public class Day05_DropDown {
         //2. create a select object
         Select select = new Select(dropdown);
         //3. select any option using by visible text
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         select.selectByVisibleText("Option 1");
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         select.selectByVisibleText("Option 2");
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
+
     @Test
     public void printAllTest(){
         //4.Create method printAllTest
@@ -88,6 +93,7 @@ public class Day05_DropDown {
         }
         Assert.assertTrue(flag);//PASS WHEN flag=true; THIS FAILS WHEN flag=false
     }
+
     //6.Create method printFirstSelectedOptionTest
     // Print first selected option
     @Test
@@ -110,6 +116,7 @@ public class Day05_DropDown {
             System.out.println("Selected Option : "+eachSelectedOption.getText());
         }
     }
+
     //7.Find the size of the dropdown, Print "Expected Is Not Equal Actual" if there are not 3 elements in the dropdown.
     @Test
     public void sizeTest(){
@@ -125,6 +132,9 @@ public class Day05_DropDown {
     }
     @After
     public void tearDown(){
+
         driver.quit();
     }
+
+
 }

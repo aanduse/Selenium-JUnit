@@ -1,4 +1,5 @@
 package com.myfirstproject;
+import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.time.Duration;
 public class Day04_RadioButton {
     WebDriver driver;
+    Faker faker = new Faker();
     @Before
     public void setUp(){
         WebDriverManager.chromedriver().setup();
@@ -29,13 +31,13 @@ public class Day04_RadioButton {
 //        Click on Create new account
         driver.findElement(By.linkText("Create new account")).click();
 //        Enter first name
-        driver.findElement(By.name("firstname")).sendKeys("fname");
+        driver.findElement(By.name("firstname")).sendKeys(faker.name().firstName());//fake first name
 //        Enter last name
-        driver.findElement(By.name("lastname")).sendKeys("lname");
+        driver.findElement(By.name("lastname")).sendKeys(faker.name().lastName());//fake last name
 //        Enter mobile number or email
-        driver.findElement(By.name("reg_email__")).sendKeys("7804075355");
+        driver.findElement(By.name("reg_email__")).sendKeys(faker.phoneNumber().cellPhone());//fake phone
 //        Enter new password
-        driver.findElement(By.name("reg_passwd__")).sendKeys("secretPass!");
+        driver.findElement(By.name("reg_passwd__")).sendKeys(faker.internet().password());//fake password
 //        Enter birthday(LATER)
 //        Jan / 10 / 2000
 //        1. Locate the dropdown element
@@ -52,7 +54,6 @@ public class Day04_RadioButton {
         WebElement yearElement = driver.findElement(By.xpath("//select[@id='year']"));
         Select selectYear = new Select(yearElement);
         selectYear.selectByVisibleText("2000");
-
 //        Enter gender
         driver.findElement(By.xpath("(//input[@type='radio'])[2]")).click();
 //        Click Sign Up
@@ -63,3 +64,21 @@ public class Day04_RadioButton {
 //        driver.quit();
 //    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
